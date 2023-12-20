@@ -1,6 +1,6 @@
 var client = contentful.createClient({
-    space: 'u9anukq7wrsg',
-    accessToken: 'OwRiIRZhOhSVbrNwgtMENq1TZhpqpeRZ0RQj2eRdCso'
+    space: '#',
+    accessToken: '#'
 });
 
 // variables declaration
@@ -24,12 +24,12 @@ let buttonDOM = [];
 class Products {
     async getProducts() {
         try {
-            let data = await client.getEntries({
-                content_type: 'houseListing'
-            });
+            // let data = await client.getEntries({
+            //     content_type: 'houseListing'
+            // });
 
-            // let result = await fetch('products.json');
-            // let data = await result.json();
+            let result = await fetch('products.json');
+            let data = await result.json();
 
             let products = data.items;
             products = products.map((product) => {
